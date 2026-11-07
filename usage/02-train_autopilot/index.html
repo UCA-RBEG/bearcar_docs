@@ -8,7 +8,8 @@
       
       
       
-        <link rel="canonical" href="https://UCAEngineeringPhysics.github.io/bearcar_docs/usage/02-train_autopilot/">
+        <link rel="canonical" href="https://UCA-RBEG.github.io/bearcar_docs/usage/02-train_autopilot/">
+      
       
       
         <link rel="prev" href="../01-collect_data/">
@@ -21,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="zensical-0.1.0">
     
     
       
@@ -29,10 +30,15 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.94dd801d.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.813d4b3f.min.css">
       
       
 
@@ -46,14 +52,14 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -74,14 +80,11 @@
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#autopilot-training-guide" class="md-skip">
-          Skip to content
-        </a>
-      
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
     </div>
     <div data-md-component="announce">
       
@@ -101,6 +104,7 @@
     <label class="md-header__button md-icon" for="__drawer">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -125,7 +129,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -135,7 +139,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -155,54 +159,28 @@
         <label class="md-header__button md-icon" for="__search">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <span class="md-visually-hidden">Search</span>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
 </div>
       
     
-    
-      <div class="md-header__source">
-        <a href="https://github.com/UCAEngineeringPhysics/bearcar_docs" title="Go to repository" class="md-source" data-md-component="source">
+    <div class="md-header__source">
+      
+        <a href="https://github.com/UCA-RBEG/bearcar_docs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
   </div>
 </a>
-      </div>
-    
+      
+    </div>
   </nav>
   
 </header>
@@ -226,9 +204,6 @@
       <a href="../.." class="md-tabs__link">
         
   
-  
-    
-  
   Meet BearCar
 
       </a>
@@ -242,11 +217,13 @@
   
   
     
+      
+    
+    
     
       <li class="md-tabs__item">
         <a href="../../installation/assemble/" class="md-tabs__link">
           
-  
   
   Installation
 
@@ -264,11 +241,13 @@
   
   
     
+      
+    
+    
     
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
-  
   
   Usage
 
@@ -310,10 +289,10 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/UCAEngineeringPhysics/bearcar_docs" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/UCA-RBEG/bearcar_docs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -337,8 +316,7 @@
   <span class="md-ellipsis">
     
   
-    Meet BearCar
-  
+  Meet BearCar
 
     
   </span>
@@ -380,8 +358,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
-  
+  Installation
 
     
   </span>
@@ -391,19 +368,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
-    Installation
-  
+  Installation
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -416,8 +393,7 @@
   <span class="md-ellipsis">
     
   
-    Assembling Guide
-  
+  Assembling Guide
 
     
   </span>
@@ -428,10 +404,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -444,8 +420,7 @@
   <span class="md-ellipsis">
     
   
-    Components List
-  
+  Components List
 
     
   </span>
@@ -456,10 +431,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -472,8 +447,7 @@
   <span class="md-ellipsis">
     
   
-    Setup Raspberry Pi Pico (2)
-  
+  Setup Raspberry Pi Pico (2)
 
     
   </span>
@@ -484,10 +458,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -500,8 +474,7 @@
   <span class="md-ellipsis">
     
   
-    Setup BearCar Software
-  
+  Setup BearCar Software
 
     
   </span>
@@ -512,10 +485,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -528,8 +501,7 @@
   <span class="md-ellipsis">
     
   
-    Wiring Diagrams
-  
+  Wiring Diagrams
 
     
   </span>
@@ -540,10 +512,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -584,8 +557,7 @@
   <span class="md-ellipsis">
     
   
-    Usage
-  
+  Usage
 
     
   </span>
@@ -595,19 +567,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
-    Usage
-  
+  Usage
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -620,8 +592,7 @@
   <span class="md-ellipsis">
     
   
-    Operating the BearCar
-  
+  Operating the BearCar
 
     
   </span>
@@ -632,10 +603,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -648,8 +619,7 @@
   <span class="md-ellipsis">
     
   
-    Data Collection Guide
-  
+  Data Collection Guide
 
     
   </span>
@@ -660,10 +630,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
     
@@ -672,7 +642,9 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
       
       
         
@@ -685,8 +657,7 @@
   <span class="md-ellipsis">
     
   
-    Autopilot Training Guide
-  
+  Autopilot Training Guide
 
     
   </span>
@@ -696,15 +667,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Autopilot Training Guide
-  
+  Autopilot Training Guide
 
     
   </span>
@@ -715,7 +685,8 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -724,44 +695,27 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#log-in-to-the-server-remotely-and-securely" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Log in to the Server (Remotely and Securely)
-      
+      </span>
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Log in to the Server (Remotely and Securely)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#start-training" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Start Training
-      
+      </span>
     </span>
   </a>
   
@@ -770,9 +724,9 @@
         <li class="md-nav__item">
   <a href="#transfer-model-back-to-rpi" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Transfer Model Back to RPi
-      
+      </span>
     </span>
   </a>
   
@@ -780,22 +734,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#model-candidates" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Model candidates
-      
+      </span>
     </span>
   </a>
   
@@ -804,9 +747,9 @@
           <li class="md-nav__item">
   <a href="#learning-curve" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Learning curve
-      
+      </span>
     </span>
   </a>
   
@@ -824,10 +767,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -840,8 +783,7 @@
   <span class="md-ellipsis">
     
   
-    Autopilot Deploying Guide
-  
+  Autopilot Deploying Guide
 
     
   </span>
@@ -852,10 +794,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -868,8 +810,7 @@
   <span class="md-ellipsis">
     
   
-    Gamepad Usage Guide
-  
+  Gamepad Usage Guide
 
     
   </span>
@@ -880,10 +821,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -896,8 +837,7 @@
   <span class="md-ellipsis">
     
   
-    Status Indicator
-  
+  Status Indicator
 
     
   </span>
@@ -908,10 +848,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -924,8 +864,7 @@
   <span class="md-ellipsis">
     
   
-    Pilot Configuration
-  
+  Pilot Configuration
 
     
   </span>
@@ -936,10 +875,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -955,10 +895,12 @@
               
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
+                  
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -967,44 +909,27 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#log-in-to-the-server-remotely-and-securely" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Log in to the Server (Remotely and Securely)
-      
+      </span>
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Log in to the Server (Remotely and Securely)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#start-training" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Start Training
-      
+      </span>
     </span>
   </a>
   
@@ -1013,9 +938,9 @@
         <li class="md-nav__item">
   <a href="#transfer-model-back-to-rpi" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Transfer Model Back to RPi
-      
+      </span>
     </span>
   </a>
   
@@ -1023,22 +948,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#model-candidates" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Model candidates
-      
+      </span>
     </span>
   </a>
   
@@ -1047,9 +961,9 @@
           <li class="md-nav__item">
   <a href="#learning-curve" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Learning curve
-      
+      </span>
     </span>
   </a>
   
@@ -1072,9 +986,9 @@
             <div class="md-content" data-md-component="content">
               
               <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
                 
                   
-
 
   
   
@@ -1087,33 +1001,40 @@
 <h2 id="log-in-to-the-server-remotely-and-securely">Log in to the Server (Remotely and Securely)</h2>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>&lt;username&gt;@&lt;ip_address&gt;
 </span></code></pre></div>
-<h3 id="example">Example</h3>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh<span class="w"> </span>user@192.168.0.112
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">ssh user@192.168.0.112</span>
 </span></code></pre></div>
-<p>You can log in to the server by inputting correct password of it.</p>
+</div>
+<p>Log in to the server via password (not safe though).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can localize yourself by looking at the command prompt displayed in the terminal: <code>&lt;username&gt;@&lt;hostname&gt;:&lt;current_path&gt;$</code>.
+<p>You can localize yourself by looking at the command prompt displayed in the terminal: <code>&lt;username&gt;@&lt;hostname&gt;:&lt;current_directory&gt;$</code>.
 The <code>&lt;hostname&gt;</code> part tells you which machine your are logged in (RPi or server).</p>
 </div>
 <h2 id="start-training">Start Training</h2>
 <blockquote>
-<p><strong>On server</strong></p>
+<p><strong>On server</strong>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">uv run ~/BearCar/scripts/learn.py --data_dir &lt;data_directory&gt; --arch &lt;model_architecture&gt;</span>
+</span></code></pre></div></p>
 </blockquote>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>~/BearCar/scripts
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>uv<span class="w"> </span>run<span class="w"> </span>learn.py<span class="w"> </span>YYYY-MM-DD-HH-MM
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">uv run ~/BearCar/scripts/learn.py --data_dir YYYY-MM-DD-HH-MM --arch bearnet</span>
 </span></code></pre></div>
-<p>Trained autopilot models will be saved on server at <code>~/BearCar/data/YYYY-MM-DD-HH-MM/models/</code>.
-The best model candidate will be saved at <code>~/BearCar/data/YYYY-MM-DD-HH-MM/best_model.pth</code>.</p>
+</div>
+<p>Autopilot models will be saved on server at <code>~/BearCar/data/&lt;data_directory&gt;/models/&lt;model_architecture&gt;/&lt;model_name&gt;.pth</code>.</p>
 <h2 id="transfer-model-back-to-rpi">Transfer Model Back to RPi</h2>
 <blockquote>
 <p><strong>On server</strong></p>
 </blockquote>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>--partial<span class="w"> </span>&lt;model_file_path&gt;<span class="w"> </span>&lt;username&gt;@&lt;ip_address&gt;:&lt;bearcar_path&gt;/models/&lt;desired_model_name&gt;.pth
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">rsync -av --mkpath --progress &lt;model_file_path&gt; &lt;username&gt;@&lt;rpi_ip&gt;:&lt;bearcar_path&gt;/models/&lt;model_architecture&gt;/&lt;desired_model_name&gt;.pth</span>
 </span></code></pre></div>
-<h3 id="example_1">Example</h3>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>--partial<span class="w"> </span>~/BearCar/data/YYYY-MM-DD-HH-MM/best_model.pth<span class="w"> </span>USERNAME@192.168.0.IP:~/BearCar/models/pilot.pth
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">rsync -av --mkpath --progress ~/BearCar/data/YYYY-MM-DD-HH-MM/best_model.pth USERNAME@192.168.0.113:~/BearCar/models/bearnet/pilot.pth</span>
 </span></code></pre></div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You may need to find out the IP address of your Raspberry Pi using command: <code>ip r</code></p>
@@ -1121,29 +1042,33 @@ The best model candidate will be saved at <code>~/BearCar/data/YYYY-MM-DD-HH-MM/
 <h3 id="model-candidates">Model candidates</h3>
 <p>There are chances you are not satisfied with the <code>best_model</code> picked automatically by the <code>learn.py</code>.
 To take a peek on all the models, you can list all of them using following commands:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ls<span class="w"> </span>~/BearCar/data/YYYY-MM-DD-HH-MM/models
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ls<span class="w"> </span>~/BearCar/data/&lt;data_directory&gt;/models/&lt;model_architecture&gt;/
 </span></code></pre></div>
 <p>For example,</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">ep10-mse0.3155.pth  ep2-mse0.3539.pth  ep5-mse0.3169.pth  ep8-mse0.3158.pth</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">ep11-mse0.3135.pth  ep3-mse0.3436.pth  ep6-mse0.3100.pth  ep9-mse0.3174.pth</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">ep1-mse0.3611.pth   ep4-mse0.3288.pth  ep7-mse0.3121.pth  learning_curve.png</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">ep10-mse0.3155.pth  ep2-mse0.3539.pth  ep5-mse0.3169.pth  ep8-mse0.3158.pth</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">ep11-mse0.3135.pth  ep3-mse0.3436.pth  ep6-mse0.3100.pth  ep9-mse0.3174.pth</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">ep1-mse0.3611.pth   ep4-mse0.3288.pth  ep7-mse0.3121.pth  learning_curve.png</span>
 </span></code></pre></div>
 <p>The model files are named as the format: <code>&lt;epoch_number&gt;-&lt;loss_type&gt;&lt;loss_value&gt;.pth</code>.
 The tailing value behind <code>mse</code> indicates the performance of the model during the training phase.
 Theoretically, The lower the value is the better the model performed.
 In this example, <code>ep6-mse0.3100.pth</code> was picked as the best model.
 You can transfer the second best or any model among these candidates, e.g., <code>ep5-mse0.3169.pth</code> to Raspberry Pi.</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>--partial<span class="w"> </span>~/BearCar/data/YYYY-MM-DD-HH-MM/models/ep5-mse0.3169.pth<span class="w"> </span>USERNAME@192.168.0.IP:~/BearCar/models/newpilot.pth
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="go">rsync -av --mkpath --progress ~/BearCar/data/YYYY-MM-DD-HH-MM/models/bearnet/ep5-mse0.3169.pth USERNAME@192.168.0.113:~/BearCar/models/bearnet/new_pilot.pth</span>
 </span></code></pre></div>
+</div>
 <h3 id="learning-curve">Learning curve</h3>
-<p>The learning curve is saved as <code>&lt;bearcar_data_directory&gt;/models/learning_curve.png</code>.
-You would like to see a dropping curve instead of a climbing one.
-Or, something was terribly wrong.</p>
+<p>The learning curve is saved as <code>&lt;bearcar_data_directory&gt;/models/&lt;model_architecture&gt;/learning_curve.png</code>.
+You would like to see a dropping curve instead of a climbing one.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can log out of the server by using command: <code>exit</code> in the terminal or simply just hit <code>Ctrl</code>+<code>d</code>.
 Remember to check the computer you are using now.</p>
 </div>
+
+
 
 
 
@@ -1180,8 +1105,8 @@ Remember to check the computer you are using now.</p>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
     </a>
   
 </div>
@@ -1191,7 +1116,7 @@ Remember to check the computer you are using now.</p>
 </footer>
       
     </div>
-    <div class="md-dialog" data-md-component="dialog">
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
@@ -1199,14 +1124,16 @@ Remember to check the computer you are using now.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "content.tooltips", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.sections","content.code.copy","content.tooltips","navigation.top"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
