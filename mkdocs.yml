@@ -1,6 +1,6 @@
 site_name: BearCar Documentation
-site_url: https://UCAEngineeringPhysics.github.io/bearcar_docs/
-repo_url: https://github.com/UCAEngineeringPhysics/bearcar_docs
+site_url: https://UCA-RBEG.github.io/bearcar_docs/
+repo_url: https://github.com/UCA-RBEG/bearcar_docs
 edit_uri: edit/main/docs/
 
 theme:
