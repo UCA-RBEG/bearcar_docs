@@ -8,43 +8,44 @@
 ssh <username>@<ip_address>
 ```
 
-### Example
 
-```sh
-ssh user@192.168.0.112
-```
+!!!example
+    ```console
+    ssh user@192.168.0.112
+    ```
 
-You can log in to the server by inputting correct password of it.
+Log in to the server via password (not safe though).
 
 !!!tip
-    You can localize yourself by looking at the command prompt displayed in the terminal: `<username>@<hostname>:<current_path>$`.
+    You can localize yourself by looking at the command prompt displayed in the terminal: `<username>@<hostname>:<current_directory>$`.
     The `<hostname>` part tells you which machine your are logged in (RPi or server).
 
 ## Start Training
 
 > __On server__
-
-```sh
-cd ~/BearCar/scripts
-uv run learn.py YYYY-MM-DD-HH-MM
+```console
+uv run ~/BearCar/scripts/learn.py --data_dir <data_directory> --arch <model_architecture>
 ```
 
-Trained autopilot models will be saved on server at `~/BearCar/data/YYYY-MM-DD-HH-MM/models/`.
-The best model candidate will be saved at `~/BearCar/data/YYYY-MM-DD-HH-MM/best_model.pth`.
+!!!example
+    ```console
+    uv run ~/BearCar/scripts/learn.py --data_dir YYYY-MM-DD-HH-MM --arch bearnet
+    ```
+
+Autopilot models will be saved on server at `~/BearCar/data/<data_directory>/models/<model_architecture>/<model_name>.pth`.
 
 ## Transfer Model Back to RPi
 
 > __On server__
 
-```sh
-rsync -av --partial <model_file_path> <username>@<ip_address>:<bearcar_path>/models/<desired_model_name>.pth
+```console
+rsync -av --mkpath --progress <model_file_path> <username>@<rpi_ip>:<bearcar_path>/models/<model_architecture>/<desired_model_name>.pth
 ```
 
-### Example
-
-```sh
-rsync -av --partial ~/BearCar/data/YYYY-MM-DD-HH-MM/best_model.pth USERNAME@192.168.0.IP:~/BearCar/models/pilot.pth
-```
+!!!example
+    ```console
+    rsync -av --mkpath --progress ~/BearCar/data/YYYY-MM-DD-HH-MM/best_model.pth USERNAME@192.168.0.113:~/BearCar/models/bearnet/pilot.pth
+    ```
 
 !!!tip
     You may need to find out the IP address of your Raspberry Pi using command: `ip r`
@@ -55,7 +56,7 @@ There are chances you are not satisfied with the `best_model` picked automatical
 To take a peek on all the models, you can list all of them using following commands:
 
 ```sh
-ls ~/BearCar/data/YYYY-MM-DD-HH-MM/models
+ls ~/BearCar/data/<data_directory>/models/<model_architecture>/
 ```
 
 For example,
@@ -72,15 +73,15 @@ Theoretically, The lower the value is the better the model performed.
 In this example, `ep6-mse0.3100.pth` was picked as the best model.
 You can transfer the second best or any model among these candidates, e.g., `ep5-mse0.3169.pth` to Raspberry Pi.
 
-```sh
-rsync -av --partial ~/BearCar/data/YYYY-MM-DD-HH-MM/models/ep5-mse0.3169.pth USERNAME@192.168.0.IP:~/BearCar/models/newpilot.pth
-```
+!!!example
+    ```console
+    rsync -av --mkpath --progress ~/BearCar/data/YYYY-MM-DD-HH-MM/models/bearnet/ep5-mse0.3169.pth USERNAME@192.168.0.113:~/BearCar/models/bearnet/new_pilot.pth
+    ```
 
 ### Learning curve
 
-The learning curve is saved as `<bearcar_data_directory>/models/learning_curve.png`.
+The learning curve is saved as `<bearcar_data_directory>/models/<model_architecture>/learning_curve.png`.
 You would like to see a dropping curve instead of a climbing one.
-Or, something was terribly wrong.
 
 !!!tip
     You can log out of the server by using command: `exit` in the terminal or simply just hit `Ctrl`+`d`.

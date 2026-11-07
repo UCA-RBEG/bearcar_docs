@@ -25,12 +25,12 @@ You can definitely train an autopilot on the Raspberry Pi, but do so would take 
     It is recommended to transfer the data on the Raspberry Pi to a computation dedicated computer.
 
 ```console
-rsync -av --progress --partial <path_to_stamped_data> <username>@<ip_address>:<bearcar_directory>/data/
+rsync -av --progress --partial <data_directory> <username>@<ip_address>:<bearcar_directory>/data/
 ```
 
-### Example
-```console
-rsync -av --progress --partial ~/BearCar/data/YYYY-MM-DD-HH-MM USERNAME@192.168.0.112:~/BearCar/data/
+!!!example
+    ```console
+    rsync -av --progress --partial ~/BearCar/data/YYYY-MM-DD-HH-MM USERNAME@192.168.0.112:~/BearCar/data/
 ```
 
 !!!tip
